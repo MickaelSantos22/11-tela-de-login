@@ -1,0 +1,296 @@
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ESTRUTURA PRINCIPAL */
+body {
+    min-height: 100vh;
+    background: linear-gradient(
+        to bottom right,
+        #e9362f 0%,
+        #ef5a24 45%,
+        #f59b32 100%
+    );
+}
+
+/* CENÁRIO */
+.page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-scene {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* CARTÃO DE LOGIN */
+.login-card {
+    width: 320px;
+    min-height: 430px;
+    border: 3px solid rgba(255, 255, 255, 0.75);
+    border-radius: 28px;
+    padding: 72px 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* TÍTULO */
+.login-card h1 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 1px;
+}
+
+/* CAMPOS */
+.input-box label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.input-box input {
+    width: 100%;
+    height: 42px;
+    border: none;
+    padding: 0 18px;
+    color: #333;
+    background-color: #fff;
+    outline: none;
+}
+
+.input-box input::placeholder {
+    color: #333;
+}
+
+/* RECUPERAÇÃO DE SENHA */
+.forgot-password {
+    text-align: right;
+    margin-top: -14px;
+    color: #ffffff;
+    font-size: 13px;
+    font-style: italic;
+    text-decoration: none;
+}
+
+/* BOTÃO */
+.login-button {
+    width: 150px;
+    height: 42px;
+    align-self: center;
+    margin-top: 26px;
+    border: none;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* ESFERAS DECORATIVAS */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 30% 25%,
+        #ffd75a 0%,
+        #de7b1f 45%,
+        #9b260d 100%
+    );
+    box-shadow: 18px 18px 30px rgba(80, 20, 0, 0.25);
+}
+
+.orb-top-left {
+    width: 86px;
+    height: 86px;
+    top: 78px;
+    left: 70px;
+}
+
+.orb-left {
+    width: 110px;
+    height: 110px;
+    top: 340px;
+    left: -38px;
+}
+
+.orb-top-right {
+    width: 130px;
+    height: 130px;
+    top: 58px;
+    right: -36px;
+}
+
+.orb-right {
+    width: 40px;
+    height: 40px;
+    top: 330px;
+    right: 105px;
+}
+
+.orb-bottom-left {
+    width: 26px;
+    height: 26px;
+    bottom: 54px;
+    left: 120px;
+}
+
+.orb-bottom-right {
+    width: 64px;
+    height: 64px;
+    right: 72px;
+    bottom: 52px;
+}
+
+/* TABLETS E TELAS MENORES */
+@media (max-width: 768px) {
+
+    .orb-top-left {
+        left: 25px;
+        top: 50px;
+    }
+
+    .orb-left {
+        left: -55px;
+        top: 300px;
+    }
+
+    .orb-top-right {
+        right: -65px;
+        top: 40px;
+    }
+
+    .orb-right {
+        right: 35px;
+        top: 280px;
+    }
+
+    .orb-bottom-left {
+        left: 45px;
+        bottom: 35px;
+    }
+
+    .orb-bottom-right {
+        right: 25px;
+        bottom: 30px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 480px) {
+
+    .login-card {
+        width: calc(100% - 40px);
+        max-width: 320px;
+        min-height: 400px;
+        padding: 60px 28px;
+    }
+
+    .login-card h1 {
+        font-size: 28px;
+    }
+
+    .orb-top-left {
+        width: 55px;
+        height: 55px;
+        left: 15px;
+        top: 35px;
+    }
+
+    .orb-left {
+        width: 75px;
+        height: 75px;
+        left: -40px;
+        top: 300px;
+    }
+
+    .orb-top-right {
+        width: 85px;
+        height: 85px;
+        right: -45px;
+        top: 25px;
+    }
+
+    .orb-right {
+        width: 30px;
+        height: 30px;
+        right: 20px;
+        top: 250px;
+    }
+
+    .orb-bottom-left {
+        width: 20px;
+        height: 20px;
+        left: 35px;
+        bottom: 25px;
+    }
+
+    .orb-bottom-right {
+        width: 45px;
+        height: 45px;
+        right: 20px;
+        bottom: 25px;
+    }
+}
+
+/* INTERAÇÃO DOS CAMPOS */
+.input-box input {
+    border: 2px solid transparent;
+    border-radius: 6px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #9b260d;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* LINK DE RECUPERAÇÃO */
+.forgot-password {
+    transition: opacity 0.3s ease;
+}
+
+.forgot-password:hover {
+    opacity: 0.75;
+}
+
+/* BOTÃO DE LOGIN */
+.login-button {
+    transition: background-color 0.3s ease,
+                transform 0.2s ease,
+                box-shadow 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #ffe3c2;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(80, 20, 0, 0.2);
+}
+
+.login-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ACESSIBILIDADE: NAVEGAÇÃO POR TECLADO */
+.forgot-password:focus-visible,
+.login-button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
